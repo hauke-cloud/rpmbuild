@@ -1,4 +1,4 @@
-FROM fedora:40
+FROM almalinux:latest
 
 # Copying all contents of rpmbuild repo inside container
 COPY . .
