@@ -1,5 +1,4 @@
-# Using CentOS 7 as base image to support rpmbuild (packages will be Dist el7)
-FROM centos:7
+FROM fedora:40
 
 # Copying all contents of rpmbuild repo inside container
 COPY . .
@@ -17,7 +16,7 @@ RUN tar --strip-components 1 -xvf node-v* -C /usr/local
 
 # Install dependecies and build main.js
 RUN npm install --production \
-&& npm run-script build
+  && npm run-script build
 
 # All remaining logic goes inside main.js , 
 # where we have access to both tools of this container and 
